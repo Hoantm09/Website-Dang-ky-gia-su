@@ -21,3 +21,24 @@ class giaSuModels extends ConnectDB{
             return false;
         }
     }
+    // Đăng nhập
+    function loginUser($email,$password){
+        // tìm kiếm dữ liệu qua email
+        $user = $this->selectOne('email', $email);
+
+        // Kiểm tra dữ liệu có tồn tại hay không
+        if (isset($user['password'])){
+            // Kiểm tra mật khẩu
+            $verify = password_verify($password, $user['password']);
+            if ($verify){
+                // Lưu phiên hay session
+                $_SESSION['id'] = $user['id'];
+                $_SESSION['name'] = $user['name'];
+                $_SESSION['avatar'] = $user['avatar'];
+                $_SESSION['lever'] = 2;
+                return true;
+            }  
+        }else{
+            return false;
+        }
+    }
