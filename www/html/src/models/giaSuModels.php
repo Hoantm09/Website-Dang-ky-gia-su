@@ -66,3 +66,38 @@ class giaSuModels extends ConnectDB{
             return false;
         }
     }
+    // Hàm chọn 1 hàng dữ liệu
+    function selectOne($key,$value){
+        $sql = "SELECT * FROM `instructor` WHERE `$key` = '$value'";
+        $user = mysqli_query($this->connection,$sql);
+        // Ép dữ liệu từ mảng về biên
+        $user = mysqli_fetch_array($user);
+        return $user;
+    }
+    // Hàm update
+    function updateOne($id, $name, $email, $phone_number, $gender, $avatar, $school_level, $subject, $address, $description){
+        // Câu truy vấn
+        $sql = "UPDATE
+                    `instructor`
+                SET
+                    `name` = '$name',
+                    `email` = '$email',
+                    `phone_number` = '$phone_number',
+                    `gender` = '$gender',
+                    `avatar` = '$avatar',
+                    `school_level`  = '$school_level',
+                    `subject`   = '$subject',
+                    `address` = '$address',
+                    `description` = '$description'
+                WHERE
+                    `id` = '$id'";
+        // Thực hiện truy vấn và kiểm tra
+        mysqli_query($this->connection,$sql);
+        if (mysqli_error($this->connection) == ""){
+            return true;
+        }else{
+            return false;
+        }
+    }
+}
+    
