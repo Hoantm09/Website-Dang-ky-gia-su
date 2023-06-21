@@ -35,6 +35,15 @@ class admin extends Controllers{
             'address'       => $myAccount['address'],
         ]);
     }
+    // Hiên Thị đổi mật khẩu
+    public function change_password(){
+        if ($this->checkLogin() == false){
+            $actual_link = $this->getUrl();
+            header("Location: $actual_link/admin/login");
+        }else{
+            $this->view("user","editPassword","Đổi mật khẩu",[]);
+        }
+    }
     
     // Sử lý đổi mật khẩu
     public function change_password_processing(){
