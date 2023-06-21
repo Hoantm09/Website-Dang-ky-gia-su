@@ -130,5 +130,23 @@ class admin extends Controllers{
             header("Location: $actual_link/admin/my_account");
         }
     }
+    // Xem toàn bộ client
+    public function client($data = []){
+        $type = "1";
+        if (isset($data[0])){
+            $type = $data[0];
+        }
+        $clients = $this->model("clientModels");
+        $clients = $clients->selectValues($type);
+        $this->view("user","user/viewClient","Xem khách hàng",[$clients]);
+    }
+    public function set_client($data = []){
+        $id = $data[0];
+        $type = $data[1];
+        $clients = $this->model("clientModels");
+        $clients = $clients->updateClient($id, $type);
+        $actual_link = $this->getUrl();
+        header("Location: $actual_link/admin/client");
+    }
     
 }
