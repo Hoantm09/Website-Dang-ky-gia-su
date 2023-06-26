@@ -1,0 +1,192 @@
+/* ===== Google Font Import - Poformsins ===== */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+* {
+    font-family :-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: 0;
+    text-decoration: none;
+    list-style: none;
+    transition: all .3s ease;
+    /* max-width: 100%; */
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+:root {
+    --blue-head: #112e51;
+    --blue: #007bff;
+    --pink: #e83e8c;
+    --red: #dc3545;
+    --orange: #fd7e14;
+    --yellow: #ffc107;
+    --green: #28a745;
+    --teal: #20c997;
+    --cyan: #17a2b8;
+    --white: #fff;
+    --gray: #6c757d;
+    --gray-dark: #343a40;
+    --primary: #0071bc;
+    --secondary: #6c757d;
+    --success: #28a745;
+    --info: #17a2b8;
+    --warning: #ffc107;
+    --danger: #dc3545;
+    --light: #f8f9fa;
+    --dark: #343a40;
+    --color-text: #5b616b;
+    --font-family-sans-serif: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+    --font-family-monospace: SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;
+}
+
+.btn {
+    display: inline-block;
+    background-color: var(--orange);
+    cursor: pointer;
+    color: var(--white);
+    font-weight: bold;
+    font-size: 1.3rem;
+    padding: 8px 15px;
+    border-radius: 10px;
+}
+
+.btn:hover {
+    background-color: var(--green);
+}
+
+.mb-30 {
+    margin-bottom: 30px;
+}
+
+.mb-48 {
+    margin-bottom: 48px;
+}
+
+.pad-8-15 {
+    padding: 8 15px;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-justify {
+    text-align: justify;
+}
+
+.btn-tutor-blue {
+    background-color: var(--primary);
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-weight: bold;
+    color: var(--white);
+    font-size: 20px;
+}
+
+.btn-tutor-blue:hover {
+    background-color: var(--orange);
+}
+
+.btn-tutor-logout {
+    background-color: rgba(255, 255, 255, 0);
+    padding: 8px 15px;
+    border-radius: 5px;
+    font-weight: bold;
+    color: var(--white);
+    border: 2px solid var(--white);
+    font-size: 20px;
+}
+
+.btn-tutor-logout:hover {
+    background-color: rgba(255, 255, 255, 0.253);
+}
+
+.btn-tutor-logout i {
+    margin-right: 5px;
+    font-size: 25px;
+}
+
+/* Header */
+.header .nav-main {
+    height: 75px;
+    background-color: var(--blue-head);
+    position: relative;
+}
+
+.header .nav-main .logo img {
+    position: absolute;
+    top: 8px;
+    height: 4rem;
+}
+
+.header .nav-main ul {
+    position: absolute;
+    right: 0;
+    margin-right: 50px;
+}
+
+.header .nav-main ul li{
+    margin-top: 18px;
+    display: inline-block;
+    color: var(--white);
+    margin-right: 15px;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.header .nav-main ul li a {
+    color: var(--white);
+
+}
+
+.header .flex {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    padding: 1rem 3rem;
+    border-bottom: 1px solid #15161641;
+}
+
+.header .flex .navbar a {
+    margin-left: 1rem;
+    font-size: 0.9rem;
+    color: var(--color-text);
+    padding: 1rem 0.5rem;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.header .flex .navbar a:hover {
+    text-decoration: none;
+    color: #0071bc;
+    background-color: #ccc;
+
+}
+
+#menu-btn {
+    display: none;
+    position: absolute;
+    right: 0;
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: var(--white);
+    cursor: pointer;
+    line-height: 75px;
+    padding: 0 15px;
+    height: 85px;
+}
+
+#menu-btn span{
+    margin-left: 10px;
+}
+
+.btn-home{
+    margin-bottom: 20px;
+}
+
+/* Header end */
