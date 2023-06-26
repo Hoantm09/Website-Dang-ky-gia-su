@@ -130,3 +130,60 @@ html {
     width: 100%;
     padding: 5px 10px;
 }
+
+/* Mobile */
+@media (max-width: 740px){
+
+    .header .flex {
+        padding: 0;
+        border-bottom: none;
+    }
+
+    .header .flex .nav-main,
+    .header .nav-main .btn-blue,
+    .header .nav-main .btn-line{
+        display: none;
+    }
+
+    .head-text {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .head-text .text-heading {
+        display: block;
+        font-size: 22px;
+        margin-right: 10px;
+        width: 100%;
+    }
+    
+    .head-text .text-class {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    
+    .head-text .text-class .empty-class{
+        display: block;
+        width: 100%;
+
+    }
+    
+    .head-text .text-class .s-class{
+        display: block;
+        width: 100%;
+
+    }
+    
+    .head-text .text-class .text-class-item{
+        display: block;
+        width: 100%;
+    }
+
+    .main {
+        padding: 10px;
+    }
+
+    .main .change-pass-box{
+        width: 100%;
+    }
+}
