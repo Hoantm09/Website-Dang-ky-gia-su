@@ -266,3 +266,182 @@ html {
     color: var(--blue);
 }
 
+/* Content css */
+.content-container {
+    padding: 0 50px;
+}
+
+.content-container .content .sub-heading{
+    font-weight: bold;
+}
+
+.content-container .content i{
+    font-size: 10px;
+    color: #6c757d;
+}
+
+.content-container .content .status .spare,
+.content-container .content .status i
+{
+    color: #28a745;
+}
+
+.content-container .content .status i
+{
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.content-salary .salary, 
+.content-salary .fee-percent 
+{
+    font-weight: bold;
+}
+
+.content .content-salary .regit-btn {
+    background-color: var(--orange);
+    color: var(--white-color);
+    font-weight: 700;
+    padding: 5px 10px;
+    border-radius: 7px;
+    cursor: pointer;
+}
+
+.content-salary .only-one 
+{
+    color: #5b616b;
+}
+
+
+/* Responsive */
+/* PC */
+@media (min-width: 1024px){
+    
+}
+
+/* Tablet */
+@media (min-width: 740px) and (max-width: 1023px) {
+
+    html {
+        font-size: 55%;
+    }
+
+}
+
+/* Mobile */
+@media (max-width: 740px){
+
+    .header .flex {
+        padding: 0;
+        border-bottom: none;
+    }
+
+    .header .nav-main #menu-btn {
+        display: inline;
+        transition: .2s linear;
+        height: 75px;
+    }
+
+    .header .nav-main #menu-btn .fa-times {
+        transform: rotate(180deg);
+    }
+
+    .header .flex .navbar.active{
+        clip-path: polygon(0 0,100% 0, 100% 100%, 0% 100%);
+        z-index: 100;
+    }
+
+    .header .nav-main{
+        max-width: 100%;
+        position: relative;
+        top: 0;
+        left: 0;
+        right: 0;
+    }
+
+    .flex .navbar a{
+        display: block;
+        z-index: 1;
+    }
+
+    .header .flex .nav-main,
+    .header .nav-main .btn-blue,
+    .header .nav-main .btn-line{
+        display: none;
+    }
+
+
+    #menu-btn {
+        display: inline-block;
+        height: 75px;
+        transition: .2s linear;
+    }
+
+    #menu-btn .fa-times {
+        transform: rotate(180deg);
+    }
+
+    .header .flex .navbar {
+        position: absolute;
+        top: 99%;
+        left: 0;
+        right: 0;
+        background-color: var(--white-color);
+        border-top: var(--border-color);
+        border-bottom: var(--border-color);
+        clip-path: polygon(0 0,100% 0, 100% 0, 0 0);
+        transition: .2s linear;
+    }
+
+    .head-text {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .head-text .text-heading {
+        display: block;
+        font-size: 22px;
+        margin-right: 10px;
+        width: 100%;
+    }
+    
+    .head-text .text-class {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    
+    .head-text .text-class .empty-class{
+        display: block;
+        width: 100%;
+
+    }
+    
+    .head-text .text-class .s-class{
+        display: block;
+        width: 100%;
+
+    }
+    
+    .head-text .text-class .text-class-item{
+        display: block;
+        width: 100%;  
+    }
+
+    .content-container {
+        padding: 0 30px;
+    }
+}
+@media (max-width: 1024px){
+
+    .header .nav-main .nav-phone{
+        display: none;
+    }
+
+    .general .content-img {
+        max-width: 100%;
+    }
+
+    .general .content-disc {
+        margin-left: 20px;
+    }
+}
