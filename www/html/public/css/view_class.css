@@ -445,3 +445,77 @@ html {
         margin-left: 20px;
     }
 }
+
+/* Tablet */
+@media (min-width: 740px) and (max-width: 1023px) {
+
+    .head-text {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .header .flex .navbar{
+        display: none;
+    }
+
+    .header .nav-main .nav-phone{
+        display: none;
+    }
+
+    .content-block .content-img{
+        margin-right: 15px;
+    }
+
+    .content-block .content-disc{
+        margin-right: 0px;
+    }
+}
+
+/* Mobile */
+@media (max-width: 740px){
+
+    .header .nav-main #menu-btn {
+        display: inline;
+        transition: .2s linear;
+        height: 75px;
+    }
+
+    .header .nav-main #menu-btn .fa-times {
+        transform: rotate(180deg);
+    }
+
+    .header .flex .navbar {
+        position: absolute;
+        top: 99%;
+        left: 0;
+        right: 0;
+        background-color: var(--white-color);
+        border-top: var(--border-color);
+        border-bottom: var(--border-color);
+        clip-path: polygon(0 0,100% 0, 100% 0, 0 0);
+        transition: .2s linear;
+    }
+
+    .header .flex .navbar.active{
+        background-color: white;
+        clip-path: polygon(0 0,100% 0, 100% 100%, 0% 100%);
+        z-index: 100;
+    }
+
+    .header .nav-main ul{
+        display: none;
+    }
+
+    .flex .navbar a{
+        display: block;
+        z-index: 1;
+    }
+
+    .header .nav-main .logo img {
+        position: absolute;
+        top: 8px;
+        left: 10px;
+        height: 64px;
+    }
+
+}
