@@ -31,7 +31,24 @@
                         <i style="color: red" class="fa-regular fa-circle-check"></i>
                     <?php } ?>
                 </div>
-                
+                <div class="content-class-detail mb-20">
+                    <p class="mb-5 sub-heading"><i class="fa-solid fa-book mr-5"></i><?php echo $data['name']?> - Lớp <?php echo $data['lever']?></p>
+                    <p class="mb-5"><i class="fa-solid fa-location-dot mr-5"></i><?php echo $data['location']?></p>
+                    <p class="mb-5"><i class="fa-solid fa-dollar-sign mr-5"></i><?php echo number_format($data['price'], 0, '', '.')?> ₫/buổi, <?php echo $data['day_in_week']?> buổi/tuần</p>
+                    <p class="mb-5"><i class="fa-solid fa-bookmark mr-5"></i>Yêu cầu: 
+                    <?php 
+                        if ($data['gender'] == 0){
+                            echo "Sinh Viên";
+                        }else if ($data['gender'] == 1){
+                            echo "Sinh Viên Nam";
+                        }else if ($data['gender'] == 2){
+                            echo "Sinh Viên Nữ";
+                        }
+                    ?>
+                    </p>
+                    <p class="mb-5"><i class="fa-solid fa-clock mr-5"></i>Thời gian có thể học: Các buổi tối. Những thời gian khác, cần trao đổi thêm với phụ huynh</p>
+    
+                </div>
                 <div class="content-bonus-info bdbottom mb-20">
                     <p class="sub-heading mb-5">Thông tin bổ sung:</p>
                     <p class="mb-5"><?php echo nl2br($data['description'])?></p>
