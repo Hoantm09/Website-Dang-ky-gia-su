@@ -85,4 +85,67 @@ class tutor extends Controllers{
             header("Location: $actual_link/tutor/register");
         }
     }
+    // Xử lý đăng nhập
+    public function login_processing(){
+        // Nhận dữ liệu gửi lên
+        $email = addslashes($_POST['email']);
+        $password = addslashes($_POST['password']);
+        
+        // Gọi model
+        $login = $this->model("giaSuModels");
+        $actual_link = $this->getUrl();
+
+        // Gọi hàm Đăng nhập và kiểm tra
+        if($login->loginUser($email,$password)){
+            header("Location: $actual_link/tutor/my_account");
+        }else{
+            $_SESSION['error'] = "Email hoặc mật khẩu không đúng!";
+            header("Location: $actual_link/tutor/login");
+        }
+    }
+    // Xử lý đăng xuất
+    public function logout(){
+        // Xóa Phiên và render về trang login
+        session_destroy();
+        $actual_link = $this->getUrl();;
+        header("Location: $actual_link/tutor/login");
+    }
+    // Xử lý cập nhaapk tài khoản
+    public function update(){  
+        // Nhận dữ liệu gửi lên
+        $name           = addslashes($_POST['name']);
+        $email          = addslashes($_POST['email']);
+        $phone_number   = addslashes($_POST['phone_number']);
+        $gender         = addslashes($_POST['gender']);
+        $school_level   = addslashes($_POST['school_level']);
+        $subject        = addslashes($_POST['subject']);
+        $address        = addslashes($_POST['address']);
+        $description    = addslashes($_POST['description']);
+        $avatar         = $_SESSION['avatar'];
+
+        // Xử lý file gửi lên
+        $file = basename($_FILES["avatar"]["name"]);
+        // Kiểm tra xem tên có rỗng không
+        if ($file != ""){
+            // Tạo tên
+            $target_file = "./public/images/avatar";
+            $date = new DateTime();
+            $avatar = $name . $date->getTimestamp() . "." . strtolower(pathinfo($file,PATHINFO_EXTENSION));
+            $target_file = $target_file . "/" . $avatar;
+            // Lưu file
+            move_uploaded_file($_FILES["avatar"]["tmp_name"], $target_file);   
+        }
+        // Lưu thông tin
+        $save = $this->model("giaSuModels");
+        $actual_link = $this->getUrl();;
+        if ($save->updateOne($_SESSION['id'], $name, $email, $phone_number, $gender, $avatar, $school_level, $subject, $address, $description)){
+            $_SESSION['name']   = $name;
+            $_SESSION['avatar'] = $avatar;
+            $_SESSION['done'] = "Thay Đổi thông tin thành công!";
+            header("Location: $actual_link/tutor/my_account");
+        }else{
+            $_SESSION['error'] = "Lỗi Trùng email!";
+            header("Location: $actual_link/tutor/my_account");
+        }
+    }
 }
