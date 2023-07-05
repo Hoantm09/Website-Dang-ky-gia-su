@@ -260,3 +260,154 @@ html {
 #menu-btn span{
     margin-left: 10px;
 }
+
+/* Header end */
+
+/* start main */
+.main{
+    width: 100%;
+}
+.main .tilte{
+    width: 100%;
+    text-align: center;
+    font-size: 28px;
+    margin-top: 20px;
+}
+.form{
+    width: 100%;
+    padding: 10px 100px;
+}
+
+.input-value{
+    padding-top: 10px;
+    margin-bottom: 10px;
+}
+.input-value .name-title{
+    font-size: 18px;
+}
+.input-value input{
+    width: 100%;
+    border-bottom: 1px solid #ccc;
+    font-size: 18px;
+    padding: 2px 10px;
+}
+
+.select-input{
+    display: block;
+    width: 100%;
+    border: 1px solid #ccc;
+    font-size: 18px;
+    padding: 2px 10px;
+    border-radius: 5px;
+}
+
+.input-value textarea{
+    width: 100%;
+    font-size: 18px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    resize: vertical;
+}
+#myTextarea{
+    height: 600px;
+}
+.input-value button {
+    width: 100%;
+    padding: 10px 10px;
+    font-size: 17px;
+    font-weight: 600;
+    border-radius: 10px;
+    cursor: pointer;
+    background-color: rgb(0, 79, 170);
+    color: white;
+}
+.input-value button:hover{
+    background-color: rgb(72, 12, 238);
+}
+/* end main */
+
+
+@media (max-width: 1024px){
+
+    .header .nav-main .nav-phone{
+        display: none;
+    }
+}
+
+/* Tablet */
+@media (min-width: 740px) and (max-width: 1023px) {
+
+    .head-text {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .header .flex .navbar{
+        display: none;
+    }
+
+    .header .nav-main .nav-phone{
+        display: none;
+    }
+
+    .form{
+        padding: 10px 30px;
+    }
+
+}
+
+/* Mobile */
+@media (max-width: 740px){
+
+    .header .nav-main #menu-btn {
+        display: inline;
+        transition: .2s linear;
+        height: 75px;
+    }
+
+    .header .nav-main #menu-btn .fa-times {
+        transform: rotate(180deg);
+    }
+
+    .header .flex .navbar {
+        position: absolute;
+        top: 99%;
+        left: 0;
+        right: 0;
+        background-color: var(--white-color);
+        border-top: var(--border-color);
+        border-bottom: var(--border-color);
+        clip-path: polygon(0 0,100% 0, 100% 0, 0 0);
+        transition: .2s linear;
+    }
+
+    .header .flex .navbar.active{
+        clip-path: polygon(0 0,100% 0, 100% 100%, 0% 100%);
+        z-index: 100;
+    }
+
+    .header .nav-main ul{
+        display: none;
+    }
+
+    .flex .navbar a{
+        display: block;
+        z-index: 1;
+    }
+
+    .header .nav-main .logo img {
+        position: absolute;
+        /* top: 8px; */
+        left: 10px;
+        height: 64px;
+    }
+
+    .form{
+        padding: 10px 30px;
+    }
+
+    #myTextarea{
+        height: 200px;
+    }
+}
