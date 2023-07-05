@@ -2,9 +2,9 @@
     class ConnectDB{
         // Thông tin về web
         protected $connection;
-        private $hostname = 'localhost';
-        private $user = 'root';
-        private $password = '';
+        private $hostname = 'giasu_db';
+        private $user = 'group9';
+        private $password = 'group9';
         private $nameDB = 'web_gia_su'; 
 
         // kết nối với DB
